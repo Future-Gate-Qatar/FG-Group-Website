@@ -18,18 +18,16 @@ navMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
-// Scroll reveal for company cards
+// Scroll reveal for company rows
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 100);
+            entry.target.classList.add('visible');
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.company-card').forEach(card => {
-    observer.observe(card);
+document.querySelectorAll('.company-row').forEach(row => {
+    observer.observe(row);
 });
