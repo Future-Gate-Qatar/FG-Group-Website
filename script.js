@@ -1,3 +1,11 @@
+// Force scroll to top on page load
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 // Hero Slider — auto cycle
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
