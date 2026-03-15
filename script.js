@@ -81,3 +81,22 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.company-row').forEach(row => {
     observer.observe(row);
 });
+
+// Cookie Banner
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+const cookieDecline = document.getElementById('cookieDecline');
+
+if (localStorage.getItem('cookieConsent')) {
+    cookieBanner.classList.add('hidden');
+}
+
+cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    cookieBanner.classList.add('hidden');
+});
+
+cookieDecline.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    cookieBanner.classList.add('hidden');
+});
