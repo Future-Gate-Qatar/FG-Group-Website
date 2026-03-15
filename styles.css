@@ -102,7 +102,7 @@ img {
 }
 
 /* =============================================
-   Hero Section — Split Layout
+   Hero Section — Slider + Split Layout
    ============================================= */
 .hero {
     position: relative;
@@ -115,11 +115,83 @@ img {
     overflow: hidden;
 }
 
+/* Slider Background */
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.58);
     z-index: 1;
+}
+
+/* Slider Navigation */
+.hero-slider-nav {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider-arrow {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #fff;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slider-dot.active {
+    background: #fff;
+    transform: scale(1.2);
 }
 
 .hero-inner {
@@ -292,7 +364,7 @@ img {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 40px;
     padding-bottom: 35px;
 }

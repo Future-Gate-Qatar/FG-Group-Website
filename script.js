@@ -18,6 +18,56 @@ navMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Hero Slider
+const slides = document.querySelectorAll('.hero-slide');
+const dotsContainer = document.querySelector('.slider-dots');
+const prevBtn = document.querySelector('.slider-prev');
+const nextBtn = document.querySelector('.slider-next');
+let currentSlide = 0;
+let sliderInterval;
+
+// Create dots
+slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('slider-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.slider-dot');
+
+function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+}
+
+function prevSlide() {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+}
+
+function startSlider() {
+    sliderInterval = setInterval(nextSlide, 5000);
+}
+
+function resetSlider() {
+    clearInterval(sliderInterval);
+    startSlider();
+}
+
+nextBtn.addEventListener('click', () => { nextSlide(); resetSlider(); });
+prevBtn.addEventListener('click', () => { prevSlide(); resetSlider(); });
+
+startSlider();
+
 // Scroll reveal for company rows
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
