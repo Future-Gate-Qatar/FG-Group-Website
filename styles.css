@@ -128,10 +128,11 @@ img {
 
 .hero-description {
     color: rgba(255, 255, 255, 0.85);
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.8;
     margin-bottom: 12px;
+    text-align: justify;
 }
 
 .hero-arrow {
@@ -224,10 +225,11 @@ img {
 }
 
 .company-info p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #444;
     line-height: 1.75;
     margin-bottom: 16px;
+    text-align: justify;
 }
 
 .read-more {
