@@ -34,74 +34,6 @@ img {
 }
 
 /* =============================================
-   Navigation
-   ============================================= */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: transparent;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar.scrolled {
-    background: rgba(0, 0, 0, 0.92);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-logo img {
-    height: 50px;
-    width: auto;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-
-.nav-menu a {
-    color: #fff;
-    font-weight: 400;
-    font-size: 0.95rem;
-    letter-spacing: 0.3px;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #93bbf5;
-}
-
-/* Mobile Toggle */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.nav-toggle span {
-    width: 25px;
-    height: 2px;
-    background: #fff;
-    transition: all 0.3s;
-}
-
-/* =============================================
    Hero Section — Slider + Split Layout
    ============================================= */
 .hero {
@@ -138,45 +70,22 @@ img {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.58);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-/* Slider Navigation */
-.hero-slider-nav {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Centered Logo at Top */
+.hero-logo {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
-.slider-arrow {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    transition: all 0.3s;
-}
-
-.slider-arrow:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: #fff;
-}
-
-.slider-dots {
-    display: flex;
-    gap: 8px;
+.hero-logo img {
+    height: 80px;
+    width: auto;
+    margin: 0 auto;
 }
 
 .slider-dot {
@@ -199,39 +108,43 @@ img {
     z-index: 2;
     display: flex;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1100px;
     width: 100%;
-    padding: 100px 40px 60px;
-    gap: 50px;
+    padding: 20px 40px 40px;
+    gap: 40px;
 }
 
 .hero-image {
-    flex: 0 0 29%;
-    max-width: 29%;
+    flex: 0 0 30%;
+    max-width: 30%;
 }
 
 .hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
 }
 
 .hero-text {
     flex: 1;
-    padding: 0 20px;
+    padding: 0;
 }
 
-.hero-tagline-img {
-    max-width: 480px;
-    width: 100%;
-    margin-bottom: 25px;
+.hero-tagline {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 22px;
 }
 
 .hero-description {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
     font-weight: 300;
-    line-height: 1.85;
+    line-height: 1.8;
+    margin-bottom: 12px;
 }
 
 .hero-arrow {
@@ -431,54 +344,61 @@ img {
 }
 
 /* =============================================
-   Cookie Banner
+   Cookie Popup
    ============================================= */
-.cookie-banner {
+.cookie-overlay {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.92);
-    color: #ddd;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 9999;
-    padding: 20px 30px;
-    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(0);
-    transition: transform 0.4s ease;
-}
-
-.cookie-banner.hidden {
-    transform: translateY(100%);
-    pointer-events: none;
-}
-
-.cookie-content {
-    max-width: 1100px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+    justify-content: center;
+    padding: 20px;
 }
 
-.cookie-content p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin: 0;
+.cookie-popup {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-icon {
+    font-size: 2.5rem;
+    color: #1863dc;
+    margin-bottom: 15px;
+}
+
+.cookie-popup h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.cookie-popup p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 22px;
 }
 
 .cookie-buttons {
     display: flex;
     gap: 10px;
-    flex-shrink: 0;
+    justify-content: center;
 }
 
 .cookie-btn {
-    padding: 8px 22px;
+    padding: 10px 28px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 500;
     cursor: pointer;
     transition: background 0.3s;
@@ -494,13 +414,13 @@ img {
 }
 
 .cookie-btn.decline {
-    background: transparent;
-    color: #ccc;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
 }
 
 .cookie-btn.decline:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #e0e0e0;
 }
 
 /* =============================================
@@ -510,8 +430,8 @@ img {
     .hero-inner {
         flex-direction: column;
         text-align: center;
-        padding: 120px 25px 40px;
-        gap: 30px;
+        padding: 20px 25px 30px;
+        gap: 25px;
     }
 
     .hero-image {
@@ -519,36 +439,18 @@ img {
         max-width: 55%;
     }
 
-    .hero-text {
-        padding: 0;
-    }
-
-    .hero-tagline-img {
-        margin: 0 auto 20px;
-        max-width: 360px;
+    .hero-tagline {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* Mobile Nav */
-    .nav-toggle {
-        display: flex;
+    .hero-logo img {
+        height: 60px;
     }
 
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 20px 30px;
-        gap: 12px;
-    }
-
-    .nav-menu.active {
-        display: flex;
+    .hero-tagline {
+        font-size: 1.8rem;
     }
 
     /* Companies */
@@ -579,8 +481,12 @@ img {
         max-width: 75%;
     }
 
+    .hero-tagline {
+        font-size: 1.5rem;
+    }
+
     .hero-description {
-        font-size: 0.88rem;
+        font-size: 0.85rem;
     }
 
     .section-title {

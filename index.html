@@ -14,25 +14,6 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="images/Looking-Beyond-The-Possible-white.png" alt="Future Gate Group">
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#companies">Our Companies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Hero Slider Section -->
     <section class="hero" id="home">
         <!-- Slider Background Images -->
@@ -44,24 +25,25 @@
         </div>
         <div class="hero-overlay"></div>
 
-        <!-- Content on top of slider -->
+        <!-- Centered Logo at Top -->
+        <div class="hero-logo">
+            <img src="images/cropped-FutureGate-Logo.png" alt="Future Gate Group">
+        </div>
+
+        <!-- Content: profile image left, text right -->
         <div class="hero-inner">
             <div class="hero-image">
                 <img src="images/fg-profile2.png" alt="Future Gate Group Profile">
             </div>
             <div class="hero-text">
-                <img src="images/Looking-Beyond-The-Possible-white-Vector-1.png" alt="Looking Beyond the Possible" class="hero-tagline-img">
+                <h1 class="hero-tagline">Looking Beyond the<br>Possible</h1>
                 <p class="hero-description">
-                    Future Gate Group is a leading company in the business services, software solutions and healthcare industry, magazine and trading &amp; contracting it serves many of the world's leading companies through various agreements and partnerships. Today, Future Gate Group has established a remarkable position in the Middle East and North Africa, resulting from a unique approach to business, service and customer portfolio.
+                    Future Gate Group is a leading company in the business services, software solutions and healthcare industry, magazine and trading &amp; contracting it serves many of the world's leading companies through various agreements and partnerships.
+                </p>
+                <p class="hero-description">
+                    Today, Future Gate Group has established a remarkable position in the Middle East and North Africa, resulting from a unique approach to business, service and customer portfolio.
                 </p>
             </div>
-        </div>
-
-        <!-- Slider Navigation -->
-        <div class="hero-slider-nav">
-            <button class="slider-arrow slider-prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="slider-dots"></div>
-            <button class="slider-arrow slider-next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
         <a href="#companies" class="hero-arrow" aria-label="Scroll to companies">
@@ -204,9 +186,11 @@
         </div>
     </footer>
 
-    <!-- Cookie Disclaimer -->
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-content">
+    <!-- Cookie Popup -->
+    <div class="cookie-overlay" id="cookieOverlay">
+        <div class="cookie-popup">
+            <div class="cookie-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+            <h3>We use cookies</h3>
             <p>We use cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies.</p>
             <div class="cookie-buttons">
                 <button class="cookie-btn accept" id="cookieAccept">Accept</button>
